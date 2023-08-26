@@ -11,7 +11,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Importing Routes Here
+const photoAlbumRouter = require("./P-photoalbum/routes");
 
 // Applying Routes Here
+app.use(photoAlbumRouter);
 
 module.exports = app;
