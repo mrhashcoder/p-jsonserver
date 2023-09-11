@@ -12,6 +12,7 @@ const getPhotoAlbum = async (req, res) => {
             .eq('id', albumId)
 
         // TODO: Create Validation and error handling here
+
         if (errors) {
             console.error(e)
             return res.status(500).json({
@@ -28,11 +29,18 @@ const getPhotoAlbum = async (req, res) => {
                 data: null,
             })
         }
-
+        const dataToBeSent = {
+            id: album.id,
+            title: album.title,
+            subtitle: album.subtitle,
+            userId: album.userId,
+            photos: album.photos,
+        }
+        console.log(dataToBeSent)
         return res.status(200).json({
             status: 'success',
             message: 'ALBUM FOUND',
-            data: album,
+            data: dataToBeSent,
         })
     } catch (e) {
         console.error(e)
