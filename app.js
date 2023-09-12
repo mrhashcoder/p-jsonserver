@@ -18,8 +18,10 @@ app.use(bodyParser.json())
 
 // Importing Routes Here
 const photoAlbumRouter = require('./P-photoalbum/routes')
+const baseRouter = require('./P-Base/routes')
 
 // Applying Routes Here
 app.use(photoAlbumRouter)
+app.use(baseRouter)
 
 module.exports = app
