@@ -1,10 +1,8 @@
 const createClient = require('@supabase/supabase-js').createClient
-const dotenv = require('dotenv')
+const config = require('./config')
 
-dotenv.config()
-
-const supabaseUrl = process.env.SUPBASE_URL
-const supabaseKey = process.env.SUPBASE_KEY
+const supabaseUrl = config.SUPABASE_URL
+const supabaseKey = config.SUPABASE_KEY
 
 const options = {
     db: {
